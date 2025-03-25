@@ -1,9 +1,11 @@
-package model.DAO;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import model.entity.UserBean;
 
 public class UserDAO {
 	public UserBean getUserId(String userId) throws SQLException, ClassNotFoundException {
