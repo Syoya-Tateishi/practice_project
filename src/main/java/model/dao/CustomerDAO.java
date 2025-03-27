@@ -11,7 +11,7 @@ import model.entity.CustomerBean;
 
 public class CustomerDAO {
 	//引数(従業員コード)を使って該当の従業員情報を取得する
-		public CustomerBean getCustomerId(int customerId) throws SQLException, ClassNotFoundException {
+		public CustomerBean getCustomer(int customerId) throws SQLException, ClassNotFoundException {
 
 			String sql = """
 					SELECT
