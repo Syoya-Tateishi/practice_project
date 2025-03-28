@@ -59,11 +59,11 @@
         <td><%= customer.getUserId() %></td>
                     
         <td>
-        	<form action ="CustomerEdit" method = "get" style = "display:inline;">
+        	<form action ="editCustomer" method = "get" style = "display:inline;">
             	<input type = "hidden" name = "customerCode" value = "<%= customer.getCustomerCode()%>">
             	<input type = "submit" value = "編集">
             </form>
-            <form action="confirmDelete.jsp" method="post">
+            <form action="customer-delete.jsp" method="post">
     			<input type="hidden" name="customerCode" value="<%= customer.getCustomerCode() %>">
     			<input type="hidden" name="action" value="delete">
             	<input type = "submit" value = "削除">
@@ -75,7 +75,7 @@
    	%>
    </tbody>
 </table>
-   <form action ="customerregister" method = "post">
+   <form action ="registerCustomer" method = "post">
    		<input type = "submit" value = "新規登録">
    </form>
                 
