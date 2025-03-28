@@ -31,9 +31,23 @@ public class ConfirmDeleteServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		
+		HttpSession session = request.getSession();
+		String userId = (String) session.getAttribute("userId");
+		String password = (String) session.getAttribute("password");
+		
+		if(userId == "null" || password == null) {
+			String message = "セッション切れ";
+			request.setAttribute("message", message);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+			dispatcher.forward(request, response);
+		}
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("confirmDelete.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -41,7 +55,7 @@ public class ConfirmDeleteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();
 		String userId = (String) session.getAttribute("userId");
@@ -58,7 +72,9 @@ request.setCharacterEncoding("UTF-8");
 		
 		try {
 			customerdao.deleteCustomer(request.getParameter("customerId"));
-			RequestDispatcher dispatcher = request.getRequestDispatcher("deleted.jsp");
+			String operation = "削除";
+			session.setAttribute("operation", operation);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("completed.jsp");
 			dispatcher.forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			String message = "Error deleting employee";

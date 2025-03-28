@@ -57,7 +57,7 @@ request.setCharacterEncoding("UTF-8");
 			String password = userbean.getPassword();
 			
 			//入力したPASSWORDがあっているか判定
-			if(session.getAttribute("password").equals(password)) {
+			if(request.getParameter("pass").equals(password)) {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("menu.jsp");
 				dispatcher.forward(request, response);
 			}else {
