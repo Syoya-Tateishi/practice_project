@@ -4,11 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>削除完了画面</title>
+<title><%=session.getAttribute("operation") %>完了画面</title>
 </head>
 <body>
-	<h3>削除しました。</h3>
-	<h3><%=session.getAttribute("Delete") %> の削除が完了。<h3>
+	<h3><%=session.getAttribute("operation") %> が完了しました。<h3>
 	<a href="menu.jsp">メニューに戻る</a>
 </body>
 </html>
