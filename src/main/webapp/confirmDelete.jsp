@@ -12,11 +12,11 @@
 </head>
 <body>
 <h2>削除してよろしいですか？</h2>
-	<form action="CustomerList" method="get">
+	<form action="listCustomer" method="get">
 		<input type="submit" value="顧客情報一覧へ戻る"><br>
 	</form>
 	<br>
-<form action="ConfirmDelete" method="post">
+<form action="customer-delete" method="post">
     <input type="hidden" name="customerId" value="<%= request.getParameter("customerId") %>">
     <input type="hidden" name="action" value="delete">
     <input type="submit" value="削除">
