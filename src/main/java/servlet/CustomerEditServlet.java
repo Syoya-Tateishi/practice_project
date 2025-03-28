@@ -119,8 +119,10 @@ request.setCharacterEncoding("UTF-8");
 				customer.setUserId(request.getParameter("userId"));
 
 				customerdao.updateCustomer(customer);
-
-				RequestDispatcher dispatcher = request.getRequestDispatcher("editComplete.jsp");
+				
+				String operation = "編集";
+				session.setAttribute("operation", operation);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("completed.jsp");
 				dispatcher.forward(request, response);
 
 			} catch (ClassNotFoundException | SQLException e) {

@@ -114,8 +114,10 @@ request.setCharacterEncoding("UTF-8");
 				customer.setUserId(request.getParameter("userId"));
 
 				customerdao.updateCustomer(customer);
-
-				RequestDispatcher dispatcher = request.getRequestDispatcher("registered.jsp");
+				
+				String operation = "登録";
+				session.setAttribute("operation", operation);
+				RequestDispatcher dispatcher = request.getRequestDispatcher("completed.jsp");
 				dispatcher.forward(request, response);
 
 			} catch (ClassNotFoundException | SQLException e) {
