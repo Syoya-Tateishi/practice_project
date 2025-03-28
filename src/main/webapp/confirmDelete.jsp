@@ -17,7 +17,7 @@
 	</form>
 	<br>
 <form action="ConfirmDelete" method="post">
-    <input type="hidden" name="customerCode" value="<%= request.getParameter("customerCode") %>">
+    <input type="hidden" name="customerId" value="<%= request.getParameter("customerId") %>">
     <input type="hidden" name="action" value="delete">
     <input type="submit" value="削除">
 </form>
