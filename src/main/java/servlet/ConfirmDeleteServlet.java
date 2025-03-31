@@ -39,12 +39,12 @@ public class ConfirmDeleteServlet extends HttpServlet {
 		String userId = (String) session.getAttribute("userId");
 		String password = (String) session.getAttribute("password");
 		
-		if(userId == "null" || password == null) {
-			String message = "セッション切れ";
-			request.setAttribute("message", message);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-			dispatcher.forward(request, response);
-		}
+//		if(userId == "null" || password == null) {
+//			String message = "セッション切れ";
+//			request.setAttribute("message", message);
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+//			dispatcher.forward(request, response);
+//		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("confirmDelete.jsp");
 		dispatcher.forward(request, response);
@@ -61,12 +61,12 @@ public class ConfirmDeleteServlet extends HttpServlet {
 		String userId = (String) session.getAttribute("userId");
 		String password = (String) session.getAttribute("password");
 		
-		if(userId == "null" || password == null) {
-			String message = "セッション切れ";
-			request.setAttribute("message", message);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-			dispatcher.forward(request, response);
-		}
+//		if(userId == "null" || password == null) {
+//			String message = "セッション切れ";
+//			request.setAttribute("message", message);
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+//			dispatcher.forward(request, response);
+//		}
 		
 		CustomerDAO customerdao = new CustomerDAO();
 		

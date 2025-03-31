@@ -46,21 +46,22 @@ INSERT INTO m_user (user_id, password, user_name) VALUES
 
 -- テーブルの作成
 CREATE TABLE m_customer (
-    customer_id INT NOT NULL PRIMARY KEY,
+    customer_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     customer_name VARCHAR(50) NOT NULL,
     customer_name_kana VARCHAR(100),
     postal_code VARCHAR(8),
     address VARCHAR(150),
     area_code CHAR(4) NOT NULL DEFAULT 'A000',
-    FOREIGN KEY (area_code) REFERENCES m_customer(area_code),
+    FOREIGN KEY (area_code) REFERENCES m_area(area_code),
     contact_person_name VARCHAR(30),
     contact_person_name_kana VARCHAR(50),
     contact_person_tell VARCHAR(20),
     user_id VARCHAR(24) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES m_customer(user_id),
+    FOREIGN KEY (user_id) REFERENCES m_user(user_id),
     update_datetime TIMESTAMP NOT NULL default current_timestamp on update current_timestamp
 );
 
 -- データを挿入
-INSERT INTO m_employee (employee_code,last_name,first_name,last_kana_name,first_kana_name,gender,birth_day,section_code,hire_date) VALUES
-('001', '㈱立石', 'かぶしきがいしゃたていし', '9999999','立石市立石区','A800','佐藤','さとう','08011112222','0');
+INSERT INTO m_customer 
+(customer_name,customer_name_kana,postal_code,address,area_code,contact_person_name,contact_person_name_kana,contact_person_tell,user_id) VALUES
+('㈱立石', 'かぶしきがいしゃたていし', '999-9999','立石市立石区','A800','佐藤','さとう','080-1111-2222','user');

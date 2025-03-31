@@ -44,12 +44,12 @@ public class CustomerEditServlet extends HttpServlet {
 		String userId = (String) session.getAttribute("userId");
 		String password = (String) session.getAttribute("password");
 		
-		if(userId == "null" || password == null) {
-			String message = "セッション切れ";
-			request.setAttribute("message", message);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-			dispatcher.forward(request, response);
-		}
+//		if(userId == "null" || password == null) {
+//			String message = "セッション切れ";
+//			request.setAttribute("message", message);
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+//			dispatcher.forward(request, response);
+//		}
 		
 		CustomerDAO customerdao = new CustomerDAO();
 		AreaDAO areadao = new AreaDAO();
@@ -81,12 +81,12 @@ request.setCharacterEncoding("UTF-8");
 		String userId = (String) session.getAttribute("userId");
 		String password = (String) session.getAttribute("password");
 		
-		if(userId == "null" || password == null) {
-			String message = "セッション切れ";
-			request.setAttribute("message", message);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-			dispatcher.forward(request, response);
-		}
+//		if(userId == "null" || password == null) {
+//			String message = "セッション切れ";
+//			request.setAttribute("message", message);
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+//			dispatcher.forward(request, response);
+//		}
 		
 		CustomerDAO customerdao = new CustomerDAO();
 
