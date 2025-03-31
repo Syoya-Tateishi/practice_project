@@ -40,16 +40,16 @@
 		<td>
     		<% 
     		String areacode = customer.getAreaCode(); 
-    		if (areacode equals(0)) { %>地区未設定
-    		<% } else if (sectioncode == 100) { %>北海道
-    		<% } else if (sectioncode == 200) { %>東北
-    		<% } else if (sectioncode == 300) { %>関東
-    		<% } else if (sectioncode == 400) { %>中部
-    		<% } else if (sectioncode == 500) { %>近畿
-    		<% } else if (sectioncode == 600) { %>中国
-    		<% } else if (sectioncode == 700) { %>四国
-    		<% } else if (sectioncode == 800) { %>九州
-    		<% } else if (sectioncode == 900) { %>沖縄
+    		if (areacode.equals("A000")) { %>地区未設定
+    		<% } else if (areacode.equals("A100")) { %>北海道
+    		<% } else if (areacode.equals("A200")) { %>東北
+    		<% } else if (areacode.equals("A300")) { %>関東
+    		<% } else if (areacode.equals("A400")) { %>中部
+    		<% } else if (areacode.equals("A500")) { %>近畿
+    		<% } else if (areacode.equals("A600")) { %>中国
+    		<% } else if (areacode.equals("A700")) { %>四国
+    		<% } else if (areacode.equals("A800")) { %>九州
+    		<% } else if (areacode.equals("A900")) { %>沖縄
     		<% } %>
 		</td>
                     
@@ -59,12 +59,12 @@
         <td><%= customer.getUserId() %></td>
                     
         <td>
-        	<form action ="editCustomer" method = "get" style = "display:inline;">
+        	<form action ="editCustomer" method = "get">
             	<input type = "hidden" name = "customerId" value = "<%= customer.getCustomerId()%>">
             	<input type = "submit" value = "編集">
             </form>
             <form action="customer-delete.jsp" method="post">
-    			<input type="hidden" name="customerId" value="<%= customer.getCustomerId() %>">
+    			<input type="hidden" name="customerId" value="delete">
     			<input type="hidden" name="action" value="delete">
             	<input type = "submit" value = "削除">
             </form>
@@ -75,7 +75,7 @@
    	%>
    </tbody>
 </table>
-   <form action ="registerCustomer" method = "post">
+   <form action ="registerCustomer" method = "get">
    		<input type = "submit" value = "新規登録">
    </form>
                 
