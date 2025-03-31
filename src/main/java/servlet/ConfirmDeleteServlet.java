@@ -16,7 +16,7 @@ import model.dao.CustomerDAO;
 /**
  * Servlet implementation class ConfirmDeleteServlet
  */
-@WebServlet("/deleteCustomer")
+@WebServlet("/customer-delete")
 public class ConfirmDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

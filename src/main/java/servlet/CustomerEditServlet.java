@@ -94,29 +94,29 @@ request.setCharacterEncoding("UTF-8");
 
 		String message = "Error adding employee<br>未入力があります";
 
-		if (request.getParameter("customerName") == null || request.getParameter("customerName").trim().isEmpty() ||
-			request.getParameter("customerNameKana") == null || request.getParameter("customerNameKana").trim().isEmpty() ||
-			request.getParameter("postalCode") == null || request.getParameter("postalCode").trim().isEmpty() ||
+		if (request.getParameter("customer_name") == null || request.getParameter("customer_name").trim().isEmpty() ||
+			request.getParameter("customer_name_kana") == null || request.getParameter("customer_name_kana").trim().isEmpty() ||
+			request.getParameter("postal_code") == null || request.getParameter("postal_code").trim().isEmpty() ||
 			request.getParameter("address") == null || request.getParameter("address").trim().isEmpty() ||
-			request.getParameter("areaCode") == null || request.getParameter("areaCode").trim().isEmpty() ||
-			request.getParameter("contactPersonName") == null || request.getParameter("contactPersonName").trim().isEmpty() ||
-			request.getParameter("contactPersonNameKana") == null || request.getParameter("contactPersonNameKana").trim().isEmpty() ||
-			request.getParameter("contactPersonTell") == null || request.getParameter("contactPersonTell").trim().isEmpty() ||
-			request.getParameter("userId") == null || request.getParameter("userId").trim().isEmpty()) {
+			request.getParameter("area_code") == null || request.getParameter("area_code").trim().isEmpty() ||
+			request.getParameter("contact_person_name") == null || request.getParameter("contact_person_name").trim().isEmpty() ||
+			request.getParameter("contact_person_name_kana") == null || request.getParameter("contact_person_name_kana").trim().isEmpty() ||
+			request.getParameter("contact_person_tel") == null || request.getParameter("contact_person_tel").trim().isEmpty()) {
 			request.setAttribute("message", message);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");
 			dispatcher.forward(request, response);
 		} else {
 			try {
-				customer.setCustomerName(request.getParameter("customerName"));
-				customer.setCustomerNameKana(request.getParameter("customerNameKana"));
-				customer.setPostalCode(request.getParameter("postalCode"));
+				customer.setCustomerName(request.getParameter("customer_name"));
+				customer.setCustomerNameKana(request.getParameter("customer_name_kana"));
+				customer.setPostalCode(request.getParameter("postal_code"));
 				customer.setAddress(request.getParameter("address"));
-				customer.setAreaCode(request.getParameter("areaCode"));
-				customer.setContactPersonName(request.getParameter("contactPersonName"));
-				customer.setContactPersonNameKana(request.getParameter("contactPersonNameKana"));
-				customer.setContactPersonTell(request.getParameter("contactPersonTell"));
-				customer.setUserId(request.getParameter("userId"));
+				customer.setAreaCode(request.getParameter("area_code"));
+				customer.setContactPersonName(request.getParameter("contact_person_name"));
+				customer.setContactPersonNameKana(request.getParameter("contact_person_name_kana"));
+				customer.setContactPersonTell(request.getParameter("contact_person_tel"));
+				customer.setUserId(userId);
+				customer.setCustomerId(Integer.parseInt(request.getParameter("customerId")));
 
 				customerdao.updateCustomer(customer);
 				
