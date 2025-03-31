@@ -58,7 +58,7 @@ public class CustomerRegisterServlet extends HttpServlet {
 		try {
 			areaList = areadao.getAllArea();
 			request.setAttribute("areaList", areaList);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("employeeRegister.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("customerRegister.jsp");
 			dispatcher.forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
@@ -89,31 +89,30 @@ request.setCharacterEncoding("UTF-8");
 
 		String message = "Error adding employee<br>未入力があります";
 		
-		if (request.getParameter("customerName") == null || request.getParameter("customerName").trim().isEmpty() ||
-			request.getParameter("customerNameKana") == null || request.getParameter("customerNameKana").trim().isEmpty() ||
-			request.getParameter("postalCode") == null || request.getParameter("postalCode").trim().isEmpty() ||
+		if (request.getParameter("customer_name") == null || request.getParameter("customerName").trim().isEmpty() ||
+			request.getParameter("customer_name_kana") == null || request.getParameter("customerNameKana").trim().isEmpty() ||
+			request.getParameter("postal_code") == null || request.getParameter("postalCode").trim().isEmpty() ||
 			request.getParameter("address") == null || request.getParameter("address").trim().isEmpty() ||
-			request.getParameter("areaCode") == null || request.getParameter("areaCode").trim().isEmpty() ||
-			request.getParameter("contactPersonName") == null || request.getParameter("contactPersonName").trim().isEmpty() ||
-			request.getParameter("contactPersonNameKana") == null || request.getParameter("contactPersonNameKana").trim().isEmpty() ||
-			request.getParameter("contactPersonTell") == null || request.getParameter("contactPersonTell").trim().isEmpty() ||
-			request.getParameter("userId") == null || request.getParameter("userId").trim().isEmpty()) {
+			request.getParameter("area_name") == null || request.getParameter("areaCode").trim().isEmpty() ||
+			request.getParameter("contact_person_name") == null || request.getParameter("contactPersonName").trim().isEmpty() ||
+			request.getParameter("contact_person_name_kana") == null || request.getParameter("contactPersonNameKana").trim().isEmpty() ||
+			request.getParameter("contact_person_tel") == null || request.getParameter("contactPersonTell").trim().isEmpty()) {
 			request.setAttribute("message", message);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");
 			dispatcher.forward(request, response);
 		} else {
 			try {
-				customer.setCustomerName(request.getParameter("customerName"));
-				customer.setCustomerNameKana(request.getParameter("customerNameKana"));
-				customer.setPostalCode(request.getParameter("postalCode"));
+				customer.setCustomerName(request.getParameter("customer_name"));
+				customer.setCustomerNameKana(request.getParameter("customer_name_kana"));
+				customer.setPostalCode(request.getParameter("postal_code"));
 				customer.setAddress(request.getParameter("address"));
-				customer.setAreaCode(request.getParameter("areaCode"));
-				customer.setContactPersonName(request.getParameter("contactPersonName"));
-				customer.setContactPersonNameKana(request.getParameter("contactPersonNameKana"));
-				customer.setContactPersonTell(request.getParameter("contactPersonTell"));
-				customer.setUserId(request.getParameter("userId"));
+				customer.setAreaCode(request.getParameter("area_name"));
+				customer.setContactPersonName(request.getParameter("contact_person_name"));
+				customer.setContactPersonNameKana(request.getParameter("contact_person_name_kana"));
+				customer.setContactPersonTell(request.getParameter("contact_person_tel"));
+				customer.setUserId(userId);
 
-				customerdao.updateCustomer(customer);
+				customerdao.addCustomer(customer);
 				
 				String operation = "登録";
 				session.setAttribute("operation", operation);
