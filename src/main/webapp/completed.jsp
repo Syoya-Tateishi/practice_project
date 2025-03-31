@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title><%=session.getAttribute("operation") %>完了画面</title>
+<jsp:include page="header.jsp" />
 </head>
 <body>
 	<h3><%=session.getAttribute("operation") %> が完了しました。<h3>
