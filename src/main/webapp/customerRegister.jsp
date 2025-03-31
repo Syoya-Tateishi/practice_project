@@ -37,8 +37,8 @@
     <label for="address">ご住所:</label>
     <input type="text" id="address" name="address" required><br><br>
     
-    <label for="area_name">都道府県:</label>
-    <select id="area_name" name="area_name">
+    <label for="area_code">都道府県:</label>
+    <select id="area_code" name="area_code">
         <option value="1">---------</option>
         <% 
             List<AreaBean> areaList = (List<AreaBean>) request.getAttribute("areaList");
