@@ -20,10 +20,12 @@
 </head>
 <body>
 <%@ include file="/header.jsp" %>
+
+
 <div class="container">
     <h1>新規顧客登録</h1>
     
-    <form action="customer-register-servlet" method="POST">
+    <form action="registerCustomer" method="POST">
 
     <label for="customer_name">お名前:</label>
     <input type="text" id="customer_name" name="customer_name" required><br><br>
