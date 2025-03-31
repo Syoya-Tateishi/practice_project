@@ -40,7 +40,7 @@
 		<td>
     		<% 
     		String areacode = customer.getAreaCode(); 
-    		if (areacode == 0) { %>地区未設定
+    		if (areacode equals(0)) { %>地区未設定
     		<% } else if (sectioncode == 100) { %>北海道
     		<% } else if (sectioncode == 200) { %>東北
     		<% } else if (sectioncode == 300) { %>関東
@@ -60,11 +60,11 @@
                     
         <td>
         	<form action ="editCustomer" method = "get" style = "display:inline;">
-            	<input type = "hidden" name = "customerCode" value = "<%= customer.getCustomerCode()%>">
+            	<input type = "hidden" name = "customerId" value = "<%= customer.getCustomerId()%>">
             	<input type = "submit" value = "編集">
             </form>
             <form action="customer-delete.jsp" method="post">
-    			<input type="hidden" name="customerCode" value="<%= customer.getCustomerCode() %>">
+    			<input type="hidden" name="customerId" value="<%= customer.getCustomerId() %>">
     			<input type="hidden" name="action" value="delete">
             	<input type = "submit" value = "削除">
             </form>
