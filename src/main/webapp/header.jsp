@@ -53,7 +53,7 @@
         <img src="ti.jpg" alt="logo">
         <a class="menu-button" href="menu.jsp">MENU</a>
 		<form action="logout" method="post" style="display: inline;">
-        <input type="submit" class="logout-button" value="ログアウト">
+        <input type="submit" class="logout-button" value="ログアウト">;
     </body>
     
     
