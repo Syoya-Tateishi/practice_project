@@ -7,14 +7,14 @@
 	<style>
 
 	.header {
-    position: relative;
-    text-align:center;
-    margin: 0;
-    padding: 0;
-    background-color: gray; /* ヘッダーの背景色を追加 */
-    background-position: center;
-    height: 10vh;
-    border-radius: 10px; /* 角を丸くする */
+    	position: relative;
+    	text-align:center;
+    	margin: 0;
+    	padding: 0;
+    	background-color: gray; /* ヘッダーの背景色を追加 */
+    	background-position: center;
+    	height: 10vh;
+    	border-radius: 10px; /* 角を丸くする */
 	}
     .header img {
         height: 50px;
@@ -48,8 +48,9 @@
         padding: 6px 0;
     }
 	</style>
+	<body>
     <div class="header">
-        <img src="ti.jpg" alt="logo"> <!-- ここにロゴ画像を挿入 -->
+        <img src="ti.jpg" alt="logo">
         <a class="menu-button" href="menu2.jsp">MENU</a>
         <a class="logout-button" href="login2.jsp">ログアウト</a>
-<button>
+    </body>
