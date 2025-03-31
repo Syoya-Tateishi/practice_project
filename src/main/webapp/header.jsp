@@ -40,17 +40,20 @@
     .menu-button {
         left: 10px;
         text-align: center;
-        padding: 6px 0;
+        padding: 10px;
     }
     .logout-button {
         right: 10px;
         text-align: center;
-        padding: 6px 0;
+        padding: 10px;
     }
 	</style>
 	<body>
     <div class="header">
         <img src="ti.jpg" alt="logo">
-        <a class="menu-button" href="menu2.jsp">MENU</a>
-        <a class="logout-button" href="login2.jsp">ログアウト</a>
+        <a class="menu-button" href="menu.jsp">MENU</a>
+		<form action="logout" method="post" style="display: inline;">
+        <input type="submit" class="logout-button" value="ログアウト">
     </body>
+    
+    
