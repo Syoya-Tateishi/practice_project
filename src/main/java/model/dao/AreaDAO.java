@@ -14,7 +14,7 @@ public class AreaDAO {
 		List<AreaBean> areaList = new ArrayList<AreaBean>();
 		String sql = """
 					SELECT
-						area_code
+						area_code,
 						area_name
 					FROM m_area
 					ORDER BY area_code ASC
