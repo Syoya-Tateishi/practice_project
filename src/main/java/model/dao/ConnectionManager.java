@@ -13,11 +13,11 @@ public class ConnectionManager{
 	/*
 	 * ユーザー
 	 */
-	private static final String USER = "root";
+	private static final String USER = "user";
 	/*
 	 * パスワード
 	 */
-	private static final String PASSWORD = "password";
+	private static final String PASSWORD = "pass";
 	
 	public static Connection getConnection()throws SQLException,ClassNotFoundException{
 		//JDBC
