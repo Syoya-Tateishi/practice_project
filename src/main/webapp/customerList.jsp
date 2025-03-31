@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>顧客情報一覧画面</title>
-    <jsp:include page="header.jsp" />
 <style>
 
 </style>
@@ -40,16 +39,16 @@
 		<td>
     		<% 
     		String areacode = customer.getAreaCode(); 
-    		if (areacode == 0) { %>地区未設定
-    		<% } else if (sectioncode == 100) { %>北海道
-    		<% } else if (sectioncode == 200) { %>東北
-    		<% } else if (sectioncode == 300) { %>関東
-    		<% } else if (sectioncode == 400) { %>中部
-    		<% } else if (sectioncode == 500) { %>近畿
-    		<% } else if (sectioncode == 600) { %>中国
-    		<% } else if (sectioncode == 700) { %>四国
-    		<% } else if (sectioncode == 800) { %>九州
-    		<% } else if (sectioncode == 900) { %>沖縄
+    		if (areacode equals(0)) { %>地区未設定
+    		<% } else if (areacode == (100)) { %>北海道
+    		<% } else if (areacode == (200)) { %>東北
+    		<% } else if (areacode == (300)) { %>関東
+    		<% } else if (areacode == (400)) { %>中部
+    		<% } else if (areacode == (500)) { %>近畿
+    		<% } else if (areacode == (600)) { %>中国
+    		<% } else if (areacode == (700)) { %>四国
+    		<% } else if (areacode == (800)) { %>九州
+    		<% } else if (areacode == (900)) { %>沖縄
     		<% } %>
 		</td>
                     
@@ -60,11 +59,11 @@
                     
         <td>
         	<form action ="editCustomer" method = "get" style = "display:inline;">
-            	<input type = "hidden" name = "customerCode" value = "<%= customer.getCustomerCode()%>">
+            	<input type = "hidden" name = "customerId" value = "<%= customer.getCustomerId()%>">
             	<input type = "submit" value = "編集">
             </form>
             <form action="customer-delete.jsp" method="post">
-    			<input type="hidden" name="customerCode" value="<%= customer.getCustomerCode() %>">
+    			<input type="hidden" name="customerId" value="<%= customer.getCustomerId() %>">
     			<input type="hidden" name="action" value="delete">
             	<input type = "submit" value = "削除">
             </form>

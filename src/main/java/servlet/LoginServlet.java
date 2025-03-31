@@ -50,7 +50,7 @@ request.setCharacterEncoding("UTF-8");
 		 */
 		String userId = request.getParameter("userId");
 		session.setAttribute("userId", userId);
-		
+		session.setAttribute("password", request.getParameter("pass"));
 		try {
 			//UserBean型のuserbeanにDAOで受け取ったデータを渡す
 			UserBean userbean = userdao.getUserId(userId);
