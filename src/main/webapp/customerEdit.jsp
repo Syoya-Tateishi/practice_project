@@ -25,7 +25,7 @@
     <h1>顧客情報編集</h1>
     
     
-    <form action="customer-edit-servlet" method="POST">
+    <form action="editCustomer" method="POST">
     <input type="hidden" name="customer_id" value="${customer.customerId}" />
 
     <label for="customer_name">顧客名称:</label>
@@ -63,7 +63,7 @@
     <input type="text" id="contact_person_name_kana" name="contact_person_name_kana" value="${customer.contactPersonNameKana}" required><br><br>
 
     <label for="contact_person_tel">担当者電話番号:</label>
-    <input type="text" id="contact_person_tel" name="contact_person_tel" value="${customer.contactPersonTel}" required><br><br>
+    <input type="text" id="contact_person_tel" name="contact_person_tel" value="${customer.contactPersonTell}" required><br><br>
 
     <button type="submit">更新</button>
 </form>
