@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 
 import model.dao.AreaDAO;
 import model.dao.CustomerDAO;
-import model.entity.AreaBean;
 import model.entity.CustomerBean;
 
 /**
@@ -43,24 +42,21 @@ request.setCharacterEncoding("UTF-8");
 		String userId = (String) session.getAttribute("userId");
 		String password = (String) session.getAttribute("password");
 		
-		if(userId == "null" || password == null) {
-			String message = "セッション切れ";
-			request.setAttribute("message", message);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-			dispatcher.forward(request, response);
-		}
+//		if(userId == "null" || password == null) {
+//			String message = "セッション切れ";
+//			request.setAttribute("message", message);
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+//			dispatcher.forward(request, response);
+//		}
 		
 		CustomerDAO customer = new CustomerDAO();
 		AreaDAO area = new AreaDAO();
 		List<CustomerBean> customerList = new ArrayList<CustomerBean>();
-		List<AreaBean> areaList = new ArrayList<AreaBean>();
 		
 		try {
 			customerList = customer.getAllCustomer();
-			areaList = area.getAllArea();
 			request.setAttribute("customerList", customerList);
-			request.setAttribute("areaList", areaList);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("employeeList.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("customerList.jsp");
 			dispatcher.forward(request, response);
 
 		} catch (Exception e) {

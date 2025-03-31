@@ -11,8 +11,8 @@ public class UserDAO {
 	public UserBean getUserId(String userId) throws SQLException, ClassNotFoundException {
 		UserBean user = new UserBean();
 		String sql = """
-				SELECFT
-					user_id
+				SELECT
+					user_id,
 					password
 				FROM m_user
 				WHERE user_id = ?
