@@ -75,7 +75,7 @@ public class CustomerEditServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();
 		String userId = (String) session.getAttribute("userId");
@@ -116,8 +116,7 @@ request.setCharacterEncoding("UTF-8");
 				customer.setContactPersonNameKana(request.getParameter("contact_person_name_kana"));
 				customer.setContactPersonTell(request.getParameter("contact_person_tel"));
 				customer.setUserId(userId);
-				customer.setCustomerId(Integer.parseInt(request.getParameter("customerId")));
-
+				customer.setCustomerId(Integer.parseInt(request.getParameter("customer_id")));
 				customerdao.updateCustomer(customer);
 				
 				String operation = "編集";
