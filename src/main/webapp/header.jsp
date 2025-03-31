@@ -18,7 +18,7 @@
 	}
     .header img {
         height: 50px;
-        padding-top: 2.5px;
+        padding-top: 7px;
         
     }
     .menu-button, .logout-button {
