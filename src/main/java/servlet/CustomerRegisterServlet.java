@@ -89,14 +89,14 @@ request.setCharacterEncoding("UTF-8");
 
 		String message = "Error adding customer<br>未入力があります";
 		
-		if (request.getParameter("customer_name") == null || request.getParameter("customerName").trim().isEmpty() ||
-			request.getParameter("customer_name_kana") == null || request.getParameter("customerNameKana").trim().isEmpty() ||
-			request.getParameter("postal_code") == null || request.getParameter("postalCode").trim().isEmpty() ||
+		if (request.getParameter("customer_name") == null || request.getParameter("customer_name").trim().isEmpty() ||
+			request.getParameter("customer_name_kana") == null || request.getParameter("customer_name_kana").trim().isEmpty() ||
+			request.getParameter("postal_code") == null || request.getParameter("postal_code").trim().isEmpty() ||
 			request.getParameter("address") == null || request.getParameter("address").trim().isEmpty() ||
-			request.getParameter("area_name") == null || request.getParameter("areaCode").trim().isEmpty() ||
-			request.getParameter("contact_person_name") == null || request.getParameter("contactPersonName").trim().isEmpty() ||
-			request.getParameter("contact_person_name_kana") == null || request.getParameter("contactPersonNameKana").trim().isEmpty() ||
-			request.getParameter("contact_person_tel") == null || request.getParameter("contactPersonTell").trim().isEmpty()) {
+			request.getParameter("area_code") == null || request.getParameter("area_code").trim().isEmpty() ||
+			request.getParameter("contact_person_name") == null || request.getParameter("contact_person_name").trim().isEmpty() ||
+			request.getParameter("contact_person_name_kana") == null || request.getParameter("contact_person_name_kana").trim().isEmpty() ||
+			request.getParameter("contact_person_tel") == null || request.getParameter("contact_person_tel").trim().isEmpty()) {
 			request.setAttribute("message", message);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");
 			dispatcher.forward(request, response);
@@ -106,14 +106,12 @@ request.setCharacterEncoding("UTF-8");
 				customer.setCustomerNameKana(request.getParameter("customer_name_kana"));
 				customer.setPostalCode(request.getParameter("postal_code"));
 				customer.setAddress(request.getParameter("address"));
-				customer.setAreaCode(request.getParameter("area_name"));
+				customer.setAreaCode(request.getParameter("area_code"));
 				customer.setContactPersonName(request.getParameter("contact_person_name"));
 				customer.setContactPersonNameKana(request.getParameter("contact_person_name_kana"));
 				customer.setContactPersonTell(request.getParameter("contact_person_tel"));
 				customer.setUserId(userId);
-
 				customerdao.addCustomer(customer);
-				
 				String operation = "登録";
 				session.setAttribute("operation", operation);
 				RequestDispatcher dispatcher = request.getRequestDispatcher("completed.jsp");

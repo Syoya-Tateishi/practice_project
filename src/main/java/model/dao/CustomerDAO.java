@@ -123,7 +123,7 @@ public class CustomerDAO {
 		//従業員情報を更新する
 		public int updateCustomer(CustomerBean customer) throws SQLException, ClassNotFoundException {
 			String sql = """
-					UPDATE m_employee SET
+					UPDATE m_customer SET
 						customer_name = ?,
 						customer_name_kana = ?,
 						postal_code = ?,
