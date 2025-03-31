@@ -59,7 +59,7 @@
         <td><%= customer.getUserId() %></td>
                     
         <td>
-        	<form action ="editCustomer" method = "get">
+        	<form action ="editCustomer" method = "get" style = "display:inline;">
             	<input type = "hidden" name = "customerId" value = "<%= customer.getCustomerId()%>">
             	<input type = "submit" value = "編集">
             </form>
