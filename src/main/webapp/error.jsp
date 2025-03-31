@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title><%=session.getAttribute("operation") %>エラー画面</title>
+<title><%=session.getAttribute("message") %></title>
 <jsp:include page="header.jsp" />
 </head>
 <body>
-	<h3><%=session.getAttribute("operation") %>エラーが発生しました。<h3>
+	<h3><%=session.getAttribute("message") %><h3>
 	<a href="menu.jsp">MENUへ</a>
 </body>
 </html>
