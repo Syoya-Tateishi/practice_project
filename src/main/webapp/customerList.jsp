@@ -63,7 +63,7 @@
             	<input type = "hidden" name = "customerId" value = "<%= customer.getCustomerId()%>">
             	<input type = "submit" value = "編集">
             </form>
-            <form action="customer-delete.jsp" method="post">
+            <form action="customer-delete" method="get">
     			<input type="hidden" name="customerId" value="delete">
     			<input type="hidden" name="action" value="delete">
             	<input type = "submit" value = "削除">
