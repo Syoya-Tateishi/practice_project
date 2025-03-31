@@ -92,7 +92,7 @@ request.setCharacterEncoding("UTF-8");
 
 		CustomerBean customer = new CustomerBean();
 
-		String message = "Error adding employee<br>未入力があります";
+		String message = "Error adding customer<br>未入力があります";
 
 		if (request.getParameter("customer_name") == null || request.getParameter("customer_name").trim().isEmpty() ||
 			request.getParameter("customer_name_kana") == null || request.getParameter("customer_name_kana").trim().isEmpty() ||

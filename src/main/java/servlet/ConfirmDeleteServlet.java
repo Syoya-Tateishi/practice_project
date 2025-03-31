@@ -77,8 +77,8 @@ public class ConfirmDeleteServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("completed.jsp");
 			dispatcher.forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
-			String message = "Error deleting employee";
-			request.setAttribute("message", message);
+			String message = "Error deleting customer";
+			session.setAttribute("message", message);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");
 			dispatcher.forward(request, response);
 		}
