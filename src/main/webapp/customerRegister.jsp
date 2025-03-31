@@ -21,6 +21,7 @@
 <body>
 <%@ include file="/header.jsp" %>
 
+
 <div class="container">
     <h1>新規顧客登録</h1>
     
