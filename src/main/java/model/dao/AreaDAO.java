@@ -34,5 +34,6 @@ public class AreaDAO {
 		return areaList;
 		
 		
+		
 	}
 }
